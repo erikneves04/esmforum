@@ -30,3 +30,13 @@ test('Testando get_pergunta', () => {
   expect(pergunta.texto).toBe('Qual a capital da França?');
   expect(pergunta.id_pergunta).toBe(id);
 });
+
+test('Testando get_respostas', () => {
+  const id = modelo.cadastrar_pergunta('Qual a capital da Alemanha?');
+  modelo.cadastrar_resposta(id, 'Berlim');
+  modelo.cadastrar_resposta(id, 'Munique');
+  const respostas = modelo.get_respostas(id);
+  expect(respostas.length).toBe(2);
+  expect(respostas[0].texto).toBe('Berlim');
+  expect(respostas[1].texto).toBe('Munique');
+});
