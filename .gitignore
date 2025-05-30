@@ -3,3 +3,4 @@ coverage
 .vscode
 testes/cypress/screenshots
 testes/cypress/videos
+bd/esmforum-teste.db
