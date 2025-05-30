@@ -40,3 +40,12 @@ test('Testando get_respostas', () => {
   expect(respostas[0].texto).toBe('Berlim');
   expect(respostas[1].texto).toBe('Munique');
 });
+
+test('Testando get_num_respostas', () => {
+  const id = modelo.cadastrar_pergunta('Qual a capital da Itália?');
+  modelo.cadastrar_resposta(id, 'Roma');
+  modelo.cadastrar_resposta(id, 'Milão');
+  modelo.cadastrar_resposta(id, 'Veneza');
+  const num = modelo.get_num_respostas(id);
+  expect(num).toBe(3);
+});
